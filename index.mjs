@@ -109,6 +109,10 @@ app.get('/courses', (req, res) => {
   });
 });
 
+app.get('/faq', (req, res) => {
+  res.render('faq', { title: 'FAQ' });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

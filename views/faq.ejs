@@ -3,14 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <%- include('partials/header') %>
   <main>
     <h1>Frequently Asked Questions</h1>
-    <p>FAQ content coming soon.</p>
+    <div class="faq-container">
+      <div class="faq-item">
+        <input type="checkbox" id="faq1">
+        <label for="faq1" class="faq-question">How do I enroll in a course?</label>
+        <div class="faq-answer">
+          <p>To enroll, visit the Courses page, select a course, and follow the registration link provided. You’ll need to create an account and complete the enrollment form.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="faq2">
+        <label for="faq2" class="faq-question">Are live sessions recorded?</label>
+        <div class="faq-answer">
+          <p>Yes, most live sessions are recorded and available for registered students to access on the platform for a limited time.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="faq3">
+        <label for="faq3" class="faq-question">How can I contact an instructor?</label>
+        <div class="faq-answer">
+          <p>Instructor contact details are listed on the Instructors page. You can also submit queries via the Contact Us form.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="faq4">
+        <label for="faq4" class="faq-question">What are the technical requirements?</label>
+        <div class="faq-answer">
+          <p>You need a modern browser (Chrome, Firefox, or Edge) and a stable internet connection. No additional software is required.</p>
+        </div>
+      </div>
+    </div>
   </main>
   <%- include('partials/footer') %>
   <script src="/js/script.js"></script>
