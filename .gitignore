@@ -1,0 +1,3 @@
+node_modules/
+db/learning_platform.db
+package-lock.json
