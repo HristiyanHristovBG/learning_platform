@@ -136,7 +136,44 @@ app.get('/schedule', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact Us' });
+  res.render('contact', { title: 'Contact Us', error: null, success: null });
+});
+
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  if (!name || !email || !message) {
+    return res.render('contact', { 
+      title: 'Contact Us', 
+      error: 'All fields are required.', 
+      success: null 
+    });
+  }
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    return res.render('contact', { 
+      title: 'Contact Us', 
+      error: 'Invalid email format.', 
+      success: null 
+    });
+  }
+  db.run(
+    `INSERT INTO contact_submissions (name, email, message) VALUES (?, ?, ?)`,
+    [name, email, message],
+    (err) => {
+      if (err) {
+        console.error('Error saving contact submission:', err.message);
+        return res.render('contact', { 
+          title: 'Contact Us', 
+          error: 'Failed to submit form. Try again.', 
+          success: null 
+        });
+      }
+      res.render('contact', { 
+        title: 'Contact Us', 
+        error: null, 
+        success: 'Message sent successfully!' 
+      });
+    }
+  );
 });
 
 app.listen(port, () => {
