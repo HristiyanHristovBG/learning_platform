@@ -113,6 +113,32 @@ app.get('/faq', (req, res) => {
   res.render('faq', { title: 'FAQ' });
 });
 
+app.get('/instructors', (req, res) => {
+  db.all('SELECT * FROM instructors', [], (err, rows) => {
+    if (err) {
+      console.error('Error fetching instructors:', err.message);
+      res.status(500).send('Server Error');
+      return;
+    }
+    res.render('instructors', { title: 'Instructors', instructors: rows });
+  });
+});
+
+app.get('/schedule', (req, res) => {
+  db.all('SELECT * FROM events', [], (err, rows) => {
+    if (err) {
+      console.error('Error fetching events:', err.message);
+      res.status(500).send('Server Error');
+      return;
+    }
+    res.render('schedule', { title: 'Live Sessions & Events', events: rows });
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: 'Contact Us' });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
