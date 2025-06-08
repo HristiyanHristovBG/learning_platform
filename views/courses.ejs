@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1>Available Courses</h1>
+    <div class="course-grid">
+      <% courses.forEach(course => { %>
+        <div class="course-card">
+          <h2><%= course.name %></h2>
+          <p><strong>Instructor:</strong> <%= course.instructor %></p>
+          <p><strong>Duration:</strong> <%= course.duration %></p>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="/js/script.js"></script>
+</body>
+</html>

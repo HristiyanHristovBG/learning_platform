@@ -98,6 +98,17 @@ app.get('/', (req, res) => {
   res.render('home', { title: 'Online Learning Platform' });
 });
 
+app.get('/courses', (req, res) => {
+  db.all('SELECT * FROM courses', [], (err, rows) => {
+    if (err) {
+      console.error('Error fetching courses:', err.message);
+      res.status(500).send('Server Error');
+      return;
+    }
+    res.render('courses', { title: 'Courses', courses: rows });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
