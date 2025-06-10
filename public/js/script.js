@@ -37,4 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.add('hidden');
     });
   }
+
+  // Quiz functionality
+  const submitQuizBtn = document.getElementById('submit-quiz');
+  const quizResult = document.getElementById('quiz-result');
+  if (submitQuizBtn && quizResult) {
+    submitQuizBtn.addEventListener('click', () => {
+      const answer = document.querySelector('input[name="q1"]:checked');
+      if (!answer) {
+        quizResult.textContent = 'Please select an answer.';
+        quizResult.style.color = '#d32f2f';
+        return;
+      }
+      if (answer.value === 'a') {
+        quizResult.textContent = 'Correct! HTML stands for Hyper Text Markup Language.';
+        quizResult.style.color = '#2e7d32';
+      } else {
+        quizResult.textContent = 'Incorrect. The correct answer is Hyper Text Markup Language.';
+        quizResult.style.color = '#d32f2f';
+      }
+    });
+  }
 });

@@ -12,6 +12,15 @@
     <h1>Welcome to FastLearn</h1>
     <p>Your one-stop platform for digital learning. Explore a wide range of courses, learn from expert instructors, and enhance your skills.</p>
     <a href="/courses" class="get-started">Get Started</a>
+    <h2>Test Your Knowledge</h2>
+    <div id="quiz">
+      <p>What does HTML stand for?</p>
+      <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label><br>
+      <label><input type="radio" name="q1" value="b"> High Tech Media Language</label><br>
+      <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label><br>
+      <button id="submit-quiz">Submit</button>
+      <p id="quiz-result"></p>
+    </div>
   </main>
   <%- include('partials/footer') %>
   <script src="/js/script.js"></script>

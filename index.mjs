@@ -176,6 +176,10 @@ app.post('/contact', (req, res) => {
   );
 });
 
+app.get('/snake', (req, res) => {
+  res.render('snake', { title: 'Snake Game' });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

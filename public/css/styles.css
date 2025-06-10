@@ -122,14 +122,84 @@ nav.navigationbar {
   color: #bfdbfe;
 }
 
-footer {
-  background-color: #1a73e8;
+footer.footer {
+  background-color: #333;
   color: white;
+  padding: 1.5rem 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.sitemap-links {
+  list-style: none;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.sitemap-links li {
+  margin-bottom: 0.5rem;
+}
+
+.sitemap-links a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sitemap-links a:hover {
+  color: #bfdbfe;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-right: 2rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #bfdbfe;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-copyright {
   text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.875rem;
 }
 
 main {
@@ -292,6 +362,43 @@ button[type="submit"]:hover {
   margin-bottom: 1rem;
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#snake-canvas {
+  border: 2px solid #1a73e8;
+  background-color: #f9f9f9;
+}
+
+.game-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.game-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.game-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.game-button:hover:not(:disabled) {
+  background-color: #1557b0;
+}
+
 @media (max-width: 600px) {
   main {
     padding: 1rem;
@@ -308,6 +415,13 @@ button[type="submit"]:hover {
   .course-grid,
   .instructor-grid,
   .event-grid {
+    grid-template-columns: 1fr;
+  }
+  #snake-canvas {
+    width: 300px;
+    height: 300px;
+  }
+  .footer-container {
     grid-template-columns: 1fr;
   }
 }
