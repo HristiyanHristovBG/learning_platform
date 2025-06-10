@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instructors</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <%- include('partials/header') %>
   <main>
-    <h1>Instructors</h1>
-    <p>Instructor profiles coming soon.</p>
+    <h1>Instructor Profiles</h1>
+    <div class="instructor-grid">
+      <% instructors.forEach(instructor => { %>
+        <div class="instructor-card">
+          <h2><%= instructor.name %></h2>
+          <p><strong>Subjects:</strong> <%= instructor.subjects %></p>
+          <p><strong>Bio:</strong> <%= instructor.bio %></p>
+          <p><strong>Contact:</strong> <a href="mailto:<%= instructor.contact %>"><%= instructor.contact %></a></p>
+        </div>
+      <% }) %>
+    </div>
   </main>
   <%- include('partials/footer') %>
   <script src="/js/script.js"></script>

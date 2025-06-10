@@ -3,14 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schedule</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <%- include('partials/header') %>
   <main>
     <h1>Live Sessions & Events</h1>
-    <p>Schedule coming soon.</p>
+    <div class="event-grid">
+      <% events.forEach(event => { %>
+        <div class="event-card">
+          <h2><%= event.title %></h2>
+          <p><strong>Date:</strong> <%= event.date %></p>
+          <p><strong>Type:</strong> <%= event.type %></p>
+          <p><strong>Instructor:</strong> <%= event.instructor %></p>
+          <p><strong>Description:</strong> <%= event.description %></p>
+          <p><strong>Status:</strong> <%= event.status %></p>
+        </div>
+      <% }) %>
+    </div>
   </main>
   <%- include('partials/footer') %>
   <script src="/js/script.js"></script>

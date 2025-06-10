@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Contact form validation
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -17,6 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Please enter a valid email address.');
         return;
       }
+    });
+  }
+
+  // Mobile menu toggle
+  const openMenuBtn = document.getElementById('open-menu-btn');
+  const closeMenuBtn = document.getElementById('close-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (openMenuBtn && closeMenuBtn && mobileMenu) {
+    openMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenu.classList.add('hidden');
     });
   }
 });

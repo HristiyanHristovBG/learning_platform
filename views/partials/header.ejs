@@ -1,7 +1,7 @@
 <header>
   <h1>FastLearn</h1>
-  <nav>
-    <ul>
+  <nav class="navigationbar">
+    <ul class="navigationbarparts desktop-nav">
       <li><a href="/">Home</a></li>
       <li><a href="/courses">Courses</a></li>
       <li><a href="/instructors">Instructors</a></li>
@@ -9,5 +9,31 @@
       <li><a href="/faq">FAQ</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    <button id="open-menu-btn" class="mobile-menu-toggle" aria-label="Open Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
   </nav>
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <button id="close-menu-btn" class="close-menu-btn" aria-label="Close Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="navigationbar">
+        <ul class="navigationbarparts">
+          <li><a href="/courses" class="mobile-nav-link">Course Listings</a></li>
+          <li><a href="/instructors" class="mobile-nav-link">Instructor Profiles</a></li>
+          <li><a href="/schedule" class="mobile-nav-link">Live Sessions & Events</a></li>
+          <li><a href="/faq" class="mobile-nav-link">FAQ</a></li>
+          <li><a href="/contact" class="mobile-nav-link">Contact</a></li>
+          <li><a href="/" class="mobile-nav-link">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
